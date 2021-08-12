@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "FUNCIONARIOS")
-public class Funcionarios extends AbstractEntity<Long> {
+public class Funcionario extends AbstractEntity<Long> {
 
 	private static final long serialVersionUID = 1L;
 

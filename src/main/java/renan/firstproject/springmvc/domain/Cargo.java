@@ -23,7 +23,7 @@ public class Cargo extends AbstractEntity<Long> {
 	private Departamento departamento;
 	
 	@OneToMany(mappedBy = "cargo")
-	private List<Funcionarios> funcionarios;
+	private List<Funcionario> funcionarios;
 
 	public String getNome() {
 		return nome;
@@ -41,11 +41,11 @@ public class Cargo extends AbstractEntity<Long> {
 		this.departamento = departamento;
 	}
 
-	public List<Funcionarios> getFuncionarios() {
+	public List<Funcionario> getFuncionarios() {
 		return funcionarios;
 	}
 
-	public void setFuncionarios(List<Funcionarios> funcionarios) {
+	public void setFuncionarios(List<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
 }
