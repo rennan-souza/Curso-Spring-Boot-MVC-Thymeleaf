@@ -33,7 +33,7 @@ public class CargoServiceImpl implements CargoService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Cargo buscarPoId(Long id) {
+	public Cargo buscarPorId(Long id) {
 		return dao.findById(id);
 	}
 
@@ -41,6 +41,14 @@ public class CargoServiceImpl implements CargoService {
 	@Transactional(readOnly = true)
 	public List<Cargo> buscarTodos() {
 		return dao.findAll();
+	}
+
+	@Override
+	public boolean cargoTemFuncionarios(Long id) {
+		if (buscarPorId(id).getFuncionarios().isEmpty()) {
+			return false;
+		}
+		return true;
 	}
 
 }
