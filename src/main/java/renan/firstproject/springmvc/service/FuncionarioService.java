@@ -1,5 +1,6 @@
 package renan.firstproject.springmvc.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import renan.firstproject.springmvc.domain.Funcionario;
@@ -18,5 +19,7 @@ public interface FuncionarioService {
 
 	List<Funcionario> buscarPorNome(String nome);
 	
-	List<Funcionario> buscarPorCargo(Long id); 
+	List<Funcionario> buscarPorCargo(Long id);
+
+	List<Funcionario> buscarPorDatas(LocalDate entrada, LocalDate saida);
 }
