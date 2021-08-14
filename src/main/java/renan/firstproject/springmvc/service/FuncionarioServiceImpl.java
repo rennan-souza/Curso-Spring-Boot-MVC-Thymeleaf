@@ -35,7 +35,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	}
 
 	@Override
-	public Funcionario buscarPoId(Long id) {
+	public Funcionario buscarPorId(Long id) {
 		return dao.findById(id);
 	}
 

@@ -12,7 +12,7 @@ public interface FuncionarioService {
 
 	void excluir(Long id);
 
-	Funcionario buscarPoId(Long id);
+	Funcionario buscarPorId(Long id);
 
 	List<Funcionario> buscarTodos();
 }
