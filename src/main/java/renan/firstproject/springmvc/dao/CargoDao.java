@@ -3,6 +3,7 @@ package renan.firstproject.springmvc.dao;
 import java.util.List;
 
 import renan.firstproject.springmvc.domain.Cargo;
+import renan.firstproject.springmvc.util.PaginacaoUtil;
 
 public interface CargoDao {
 	
@@ -15,4 +16,6 @@ public interface CargoDao {
 	Cargo findById(Long id);
 	
 	List<Cargo> findAll();
+	
+	PaginacaoUtil<Cargo> buscaPaginada(int pagina);
 }

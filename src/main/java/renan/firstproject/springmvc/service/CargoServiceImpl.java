@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import renan.firstproject.springmvc.dao.CargoDao;
 import renan.firstproject.springmvc.domain.Cargo;
+import renan.firstproject.springmvc.util.PaginacaoUtil;
 
 @Service
 @Transactional(readOnly = false)
@@ -49,6 +50,11 @@ public class CargoServiceImpl implements CargoService {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public PaginacaoUtil<Cargo> buscaPorPagina(int pagina) {
+		return dao.buscaPaginada(pagina);
 	}
 
 }

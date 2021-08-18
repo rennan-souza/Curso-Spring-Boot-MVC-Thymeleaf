@@ -3,6 +3,7 @@ package renan.firstproject.springmvc.service;
 import java.util.List;
 
 import renan.firstproject.springmvc.domain.Cargo;
+import renan.firstproject.springmvc.util.PaginacaoUtil;
 
 public interface CargoService {
 
@@ -17,4 +18,6 @@ public interface CargoService {
 	List<Cargo> buscarTodos();
 
 	boolean cargoTemFuncionarios(Long id);
+	
+	PaginacaoUtil<Cargo> buscaPorPagina(int pagina);
 }
