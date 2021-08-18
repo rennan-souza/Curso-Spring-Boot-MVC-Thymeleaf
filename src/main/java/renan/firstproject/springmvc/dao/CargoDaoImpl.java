@@ -10,13 +10,13 @@ import renan.firstproject.springmvc.util.PaginacaoUtil;
 @Repository
 public class CargoDaoImpl extends AbstractDao<Cargo, Long> implements CargoDao {
 
-	public PaginacaoUtil<Cargo> buscaPaginada(int pagina) {
+	public PaginacaoUtil<Cargo> buscaPaginada(int pagina, String direcao) {
 		
 		int tamanho = 5;
 		int inicio = (pagina - 1) * tamanho;
 		
 		List<Cargo> cargos = getEntityManager()
-				.createQuery("SELECT c FROM Cargo c ORDER BY c.nome ASC", Cargo.class)
+				.createQuery("SELECT c FROM Cargo c ORDER BY c.nome " + direcao, Cargo.class)
 				.setFirstResult(inicio)
 				.setMaxResults(tamanho)
 				.getResultList();
@@ -24,7 +24,7 @@ public class CargoDaoImpl extends AbstractDao<Cargo, Long> implements CargoDao {
 		long totalRegistros = count();
 		long totalDePaginas = (totalRegistros + (tamanho -1)) / tamanho;
 		
-		return new PaginacaoUtil<>(tamanho, pagina, totalDePaginas, cargos);
+		return new PaginacaoUtil<>(tamanho, pagina, totalDePaginas, direcao, cargos);
 	}
 	
 	public long count() {
